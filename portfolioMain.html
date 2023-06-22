@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/portfolioStyles.css">
+
+    <style>
+        body {
+            background-color: black;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            border: none;
+            width: 1200px;
+        }
+        .wrapper img {
+            border-radius: 5%;
+        }
+        #aboutText {
+            padding-left: 50px;
+            padding-right: 50px;
+            color: darkgoldenrod;
+        }
+        #aboutContainer {
+            padding-left: 75px;
+        }
+        #aboutContainer img{
+            width: 300px;
+            height: auto;
+        }
+        #photoContainer img{
+            width: 300px;
+            height: auto;
+            padding-left: 75px;
+        }
+        #bookText {
+            padding-left: 50px;
+            padding-right: 50px;
+            color: darkgoldenrod;
+        }
+        #bookContainer img{
+            width: 300px;
+            height: auto;
+            margin-bottom: 100px;
+        }
+        #latestText {
+            padding-left: 50px;
+            padding-right: 50px;
+            color: darkgoldenrod;
+        }
+        #latestContainer {
+            padding-left: 75px;
+        }
+        #latestContainer img{
+            width: 300px;
+            height: auto;
+        }
+        #contactContainer {
+            color: darkgoldenrod;
+        }
+        #contactContainer button {
+            background-color: darkgoldenrod;
+            border: none;
+        }
+        #btn {
+            padding-bottom: 200px;
+        }
+        #formButtons {
+            padding-left: 470px;
+        }
+        h1 {
+            margin: 0;
+            top: 40%;
+            position: relative;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        #recommendedText img {
+            width: 50px;
+            height: auto;
+            margin-left: 10px;
+        }
+        .header {
+            font-size: 1em;
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="nav">
+        <li><a href="portfolioMain.html">Home</a></li>
+        <li><a href="portfolioProjects.html">Projects</a></li>
+        <li id="active-nav"><a href="portfolioResume.html">Resume</a></li>
+	</ul> <!-- nav -->
+    <div class="col-md-12" id="header">
+        <h1></h1>
+    </div> <!-- #header -->
+
+    <div class="wrapper container-fluid">
+        <div class="col-md-4" id="aboutContainer">
+            <img src="img/aboutMe.jpg" alt="Mohammed's Photo">
+        </div> <!-- #meContainer-->
+        <div class="col-md-8 text-center" id="aboutText">
+            I'm a Questbridge scholar and current junior at USC studying Computer Science and Business Administration. 
+            Last spring semester I took Data Structures and Object-Oriented Programming while continuing to work as a Remote Student Computer Consultant for USC's Information Technology Service. 
+            I also interned this past summer at GSK working as a Software Engineering Intern on their Global Support Functions team. 
+            My work focused on developing microservices and implementing event streaming features. 
+            I'm interested in Software Engineering and Product Management and looking for any opportunities that will further enrich me in those specific areas.
+            I'm currently searching for an internship for Summer 2023!</div>
+    </div> <!-- #wrapper -->
+
+    <div class="wrapper container-fluid">
+        <div class="col-md-8 text-center" id="bookText">
+            <h2>My Favorite Book</h2>
+            A book about the trials and triumphs of a Korean family during the Japanese occupation of Korea and beyond. It
+            follows the family through 3 generations as life unfolds. It's a pivotal book for me since it was my first jump
+            back into reading after a long break and reminded me of the wonderful worlds that exist behind words on paper.
+        </div>
+        <div class="col-md-4" id="bookContainer">
+            <img src="img/pachinko.jpeg" alt="Pachinko Book">
+        </div> <!-- #photoContainer-->
+    </div> <!-- #wrapper -->
+
+    <div class="wrapper container-fluid">
+        <div class="col-md-12 text-center" id="latestText">
+          <h2>Some Places You Can Find Me</h2>
+          <div class="col-12 d-grid justify-content-center" id="recommendedText">
+            <a href="mailto:mohammed.salamgir@gmail.com" target="_blank">
+              <img src="./img/email-svgrepo-com.svg" alt="Email Logo">
+            </a>
+            <a href="https://www.linkedin.com/in/alamgir09" target="_blank">
+              <img src="./img/linkedin-svgrepo-com.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://github.com/alamgir09" target="_blank">
+              <img src="./img/github-142-svgrepo-com.svg" alt="GitHub Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <div id="footer">
+        University of Southern California &copy; 2023
+    </div> <!-- #footer -->
+
+
+    <script>
+        var i = 0;
+        var txt = 'Hi! I\'m Mohammed...';
+        var speed = 100;
+        function typeWriter() {
+            console.log("We're running the effect")
+            if (i < txt.length) {
+                document.querySelector(":scope h1").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }       
+        typeWriter();
+
+        document.querySelector("#contact-form").onsubmit = function() {
+            console.log("We're trying to submit a success message");
+            document.querySelector("#recommendedText").innerHTML = "The book is Coding Book!";
+            document.querySelector("#recommendedImage").src = "img/coding-background.jpeg";
+            document.querySelector("#submission-success").innerHTML = "The recommendation has been sent!";
+            return false;
+        }
+
+        document.querySelector("#search-form").onsubmit = function() {
+            console.log("value is " + document.querySelector("#emailSearch").value);
+            if (document.querySelector("#emailSearch").value == "habibi@usc.edu") {
+                document.querySelector("#queryText").innerHTML = "Pachinko";
+
+                document.querySelector("#name").value = "Habibi";
+                document.querySelector("#email").value = "habibi@usc.edu";
+                document.querySelector("#book").value = "Pachinko";
+                document.querySelector("#message").value = "Hello!";
+            }
+            else {
+                document.querySelector("#queryText").innerHTML = "No Results Found, try again";
+            }
+            return false;
+        }
+
+
+        document.querySelector("#clearButton").onclick = function() {
+            document.querySelector("#name").value = "";
+                document.querySelector("#email").value = "";
+                document.querySelector("#book").value = "";
+                document.querySelector("#message").value = "";
+                document.querySelector("#submission-success").innerHTML = "";
+                document.querySelector("#edit-success").innerHTML = "";
+        }
+
+        document.querySelector("#deleteButton").onclick = function() {
+            document.querySelector("#name").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#book").value = "";
+            document.querySelector("#message").value = "";
+            document.querySelector("#submission-success").innerHTML = "";
+            document.querySelector("#edit-success").innerHTML = "";
+            document.querySelector("#queryText").innerHTML = "The Recommendation has been deleted :(";
+        }
+
+        document.querySelector("#editButton").onclick = function() {
+            document.querySelector("#name").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#book").value = "";
+            document.querySelector("#message").value = "";
+            document.querySelector("#submission-success").innerHTML = "";
+            document.querySelector("#edit-success").innerHTML = "";
+            document.querySelector("#submission-success").innerHTML = "";
+            document.querySelector("#edit-success").innerHTML = "Edit made successfully!";
+        }
+
+
+    </script>
+</body>
+</html>

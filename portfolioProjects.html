@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed's Projects</title>
+
+    <link rel="stylesheet" href="css/portfolioStyles.css">
+
+    <style>
+        #ProjectContainer {
+            width: 1400px;
+            display: flex;
+        }
+        body {
+            background-color: black;
+        }
+        h2 {
+            color: darkgoldenrod;
+        }
+        .wrapper {
+            padding-bottom: 100px;
+        }
+        .wrapper img {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            color: darkgoldenrod;
+            border-radius: 10%;
+        }
+        .col-md-6 {
+            margin-left: 170px;
+        }
+        .imgContainer {
+            background-color: black;
+
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+        .imgContainer:hover .overlay {
+            display: block;
+            padding-top: 70px;
+            color: darkgoldenrod;;
+        }
+        #header {
+            height: 250px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="nav">
+        <li><a href="portfolioMain.html">Home</a></li>
+        <li><a href="portfolioProjects.html">Projects</a></li>
+        <li id="active-nav"><a href="portfolioResume.html">Resume</a></li>
+	</ul> <!-- nav -->
+    <div id="header">
+        <h1></h1>
+    </div> <!-- #header -->
+
+    <div class="wrapper">
+        <div class="container-fluid" id="ProjectContainer">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TMDb</h2>
+                    <div class="imgContainer">
+                        <img src="img/TMDb2.jpeg" alt="Image 1">
+                        <div class="overlay">
+                            For TMDb, I utilized React, MongoDB, Spring Boot, and Bootstrap to create a user-friendly website for movie enthusiasts. 
+                            I focused on creating an aesthetically pleasing design for the project, some features include user authentication, a search feature using the MovieDB API, and personalized recommendations.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mealShare</h2>
+                    <div class="imgContainer">
+                        <img src="img/mealShare.png" alt="Image 2">
+                        <div class="overlay">
+                            For this project, I utilized design tools like Figma to create a mockup and design the user workflow for an app called mealShare. 
+                            I then created aesthetically pleasing web pages using HTML and CSS, with a focus on simplifying the user experience. 
+                            Finally, I designed the database on DBDiagram and set it up on Cloud Firestore. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TrojanExpeditions</h2>
+                    <div class="imgContainer">
+                        <div class="overlay">
+                            For TrojanExpeditions, I used Vue.js, Spring Boot, and SQL to create a website that helps USC students find the best study spots on campus. 
+                            The website includes a rating system based on filters like quietness and aesthetics, a student forum, and an interactive map.
+                        </div>
+                        <img src="img/trojanExpedition.jpeg" alt="Image 1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SalStocks</h2>
+                    <div class="imgContainer">
+                        <div class="overlay">
+                            For SalStocks, I utilized Java to parse JSON and CSV files to store stock database and future stock trades, checking for valid input along the way. 
+                            I then implemented multi-threading to simulate stock trades by stock brokers set by user-inputted files. 
+                        </div>
+                        <img src="img/stockTrading.webp" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+        </div> <!-- #ProjectContainer-->
+
+    </div> <!-- .wrapper -->
+
+
+    <div id="footer">
+        University of Southern California &copy; 2023
+    </div> <!-- #footer -->
+
+
+    <script>
+        var i = 0;
+        var txt = 'My Projects';
+        var speed = 100;
+        function typeWriter() {
+            console.log("We're running the effect")
+            if (i < txt.length) {
+                document.querySelector(":scope h1").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }       
+        typeWriter();
+    </script>
+</body>
+</html>

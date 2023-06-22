@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Saud's Portfolio Website</title>
+
+    <link rel="stylesheet" href="css/portfolioStyles.css">
+
+    <style>
+        h1 {
+            top: -100px;
+            position: relative;
+        }
+        body {
+            background-color: black;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .wrapper {
+            border: none;
+        }
+        #ResumeContainer {
+            width: 1000px;
+            height: 1150px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 200px;
+            padding-top: 0;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <ul id="nav">
+        <li><a href="portfolioMain.html">Home</a></li>
+        <li><a href="portfolioProjects.html">Projects</a></li>
+        <li id="active-nav"><a href="portfolioResume.html">Resume</a></li>
+	</ul> <!-- nav -->
+    <div id="header">
+        <h1></h1>
+    </div> <!-- #header -->
+
+    <div class="wrapper">
+        <div class="container-fluid justify-content-center" id="ResumeContainer">
+            <div class="col-12 d-flex justify-content-center"><h2>My Resume</h2></div>
+            <iframe src="./media/portfolioResume.pdf"></iframe>
+        </div> <!-- #ResumeContainer-->
+    </div> <!-- .wrapper -->
+
+
+    <div id="footer">
+        University of Southern California &copy; 2023
+    </div> <!-- #footer -->
+
+
+    <script>
+        var i = 0;
+        var txt = 'My Resume';
+        var speed = 100;
+        function typeWriter() {
+            console.log("We're running the effect")
+            if (i < txt.length) {
+                document.querySelector(":scope h1").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }       
+        typeWriter();
+    </script>
+</body>
+</html>
